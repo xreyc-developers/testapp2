@@ -2,4 +2,26 @@ body {
   margin: 0;
   font-family: sans-serif;
   background-color: #f7f7f7;
+  text-align: center;
+}
+
+.navigation-links {
+  margin-bottom: 50px;
+  padding: 20px 20px;
+  background-color: #fff;
+}
+
+.navigation-links>a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+}
+
+.navigation-links>a:hover {
+  color: #909;
+}
+
+.navigation-links>a:first-child {
+  margin-right: 20px;
 }
