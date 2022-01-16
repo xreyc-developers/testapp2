@@ -31,31 +31,36 @@ const Challenge1 = () => {
     prepareData();
   },[])
 
-  const updateData = async (cnt) => {
-    await fetch("https://reyc-testapp3.herokuapp.com/api/counter/" + counter.id, 
-      {
-        method: "PUT",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ count: cnt })
-      }
-    );
-  }
 
+  // UPDATE PER COUNT CHANGES
+  useEffect(() => {
+    const updateData = async () => {
+      await fetch("https://reyc-testapp3.herokuapp.com/api/counter/" + counter.id, 
+        {
+          method: "PUT",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ count: counter.count })
+        }
+      );
+    }
+    updateData();
+  },[counter.id, counter.count])
+
+  // INCREMENT
   const incrementHandler = () => {
     setCounter(prevState => {
       const newCount = prevState.count++;
-      updateData(prevState.count);
       return { id: prevState.id, count: newCount }
     });
   }
 
+  // DECREMENT
   const decrementHandler = () => {
     setCounter(prevState => {
       const newCount = prevState.count--;
-      updateData(prevState.count);
       return { id: prevState.id, count: newCount }
     });
   }
