@@ -7,14 +7,14 @@ const Challenge1 = () => {
   useEffect(() => {
     const prepareData = async () => {
       // GET DATA
-      const getData = await fetch("http://testapp1-env-1.eba-hyfnq7py.us-east-2.elasticbeanstalk.com/api/counter", { mode: "cors" });
+      const getData = await fetch("https://testapp1-env-1.eba-hyfnq7py.us-east-2.elasticbeanstalk.com/api/counter", { mode: "cors" });
       const gdata = await getData.json();
       if(gdata.length !== 0) {
         setCounter({ id: gdata[0]._id, count: gdata[0].count });
       }
       else {
         // POST DATA
-        const postData = await fetch("http://testapp1-env-1.eba-hyfnq7py.us-east-2.elasticbeanstalk.com/api/counter", 
+        const postData = await fetch("https://testapp1-env-1.eba-hyfnq7py.us-east-2.elasticbeanstalk.com/api/counter", 
           {
             method: "POST",
             mode: "cors",
@@ -32,7 +32,7 @@ const Challenge1 = () => {
   },[])
 
   const updateData = async (cnt) => {
-    await fetch("http://testapp1-env-1.eba-hyfnq7py.us-east-2.elasticbeanstalk.com/api/counter/" + counter.id, 
+    await fetch("https://testapp1-env-1.eba-hyfnq7py.us-east-2.elasticbeanstalk.com/api/counter/" + counter.id, 
       {
         method: "PUT",
         mode: "cors",
