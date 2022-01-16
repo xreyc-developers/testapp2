@@ -1,0 +1,34 @@
+.counter-wrap {
+  padding: 50px 20px 50px 20px;
+  position: absolute;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 300px;
+}
+
+.counter-wrap>div:first-child {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.counter-wrap>div:last-child {
+  margin-top: 20px;
+}
+
+.counter-wrap>div:last-child>button {
+  margin-top: 10px;
+  border: 1px solid rgba(000,000,000,0.1);
+  background-color: #fff;
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+}
+
+.counter-wrap>div:last-child>button:hover {
+  border: 1px solid #909;
+  background-color: #909;
+  color: #fff;
+}
