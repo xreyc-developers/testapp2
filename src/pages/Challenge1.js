@@ -34,13 +34,16 @@ const Challenge1 = () => {
   // UPDATE PER COUNT CHANGES
   useEffect(() => {
     const updateData = async () => {
-      await fetch("https://reyc-testapp3.herokuapp.com/api/counter/" + counter.id, 
+      await fetch("https://reyc-testapp3.herokuapp.com/api/counter", 
         {
-          method: "PUT",
+          method: "POST",
           headers: {
             "Content-Type": "text/plain"
           },
-          body: JSON.stringify({ count: counter.count })
+          body: JSON.stringify({ 
+            id: counter.id,
+            count: counter.count 
+          })
         }
       );
     }
