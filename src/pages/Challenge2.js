@@ -37,7 +37,7 @@ const Challenge2 = () => {
       }
     }
 
-    if(!isInitial) {
+    if(!isInitial && counter.count !== null) {
       updateData();
     }
   },[counter.id, counter.count, isInitial])
@@ -63,6 +63,7 @@ const Challenge2 = () => {
     <div>
       <div>
         <h3>Challenge 2</h3>
+        <p>ReactJS + Firestore + Cloud Function + Github CI/CD with Heruko</p>
       </div>
       <div className="counter-wrap">
           <div>{counter.count}</div>
