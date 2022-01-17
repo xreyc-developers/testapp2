@@ -63,7 +63,9 @@ const Challenge2 = () => {
     <div>
       <div>
         <h3>Challenge 2</h3>
-        <p style={{ marginBottom: '20px' }}>ReactJS + Firestore + Cloud Function + Github CI/CD with Heruko</p>
+        <div style={{ marginBottom: '20px' }}>
+          <p>ReactJS + Firestore + Cloud Function + Github CI/CD with Heruko</p>
+        </div>
       </div>
       <div className="counter-wrap">
           <div>{counter.count}</div>

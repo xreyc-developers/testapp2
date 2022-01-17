@@ -76,7 +76,9 @@ const Challenge1 = () => {
     <div>
       <div>
         <h3>Challenge 1</h3>
-        <p style={{ marginBottom: '20px' }}>ReactJS + NodeJS + Express + MongoDB + Github CI/CD with Heruko</p>
+        <div style={{ marginBottom: '20px' }}>
+          <p>ReactJS + NodeJS + Express + MongoDB + Github CI/CD with Heruko</p>
+        </div>
       </div>
       <div className="counter-wrap">
           <div>{counter.count}</div>
