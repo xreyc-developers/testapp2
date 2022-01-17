@@ -6,42 +6,12 @@ const Challenge2 = () => {
   // INITIALIZE
   useEffect(() => {
     const prepareData = async () => {
-      // GET DATA
-      const getData = await fetch("https://reyc-testapp3.herokuapp.com/api/counter", { mode: "cors" });
-      const gdata = await getData.json();
-      if(gdata.length !== 0) {
-        setCounter({ id: gdata[0]._id, count: gdata[0].count });
-      }
-      else {
-        // POST DATA
-        const postData = await fetch("https://reyc-testapp3.herokuapp.com/api/counter", 
-          {
-            method: "POST",
-            mode: "cors",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ count: 0 })
-          }
-        );
-        const pData = await postData.json();
-        setCounter({ id: pData[0]._id, count: pData[0].count });
-      }
     }
     prepareData();
   },[])
 
   const updateData = async (cnt) => {
-    await fetch("https://reyc-testapp3.herokuapp.com/api/counter/" + counter.id, 
-      {
-        method: "PUT",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ count: cnt })
-      }
-    );
+
   }
 
   const incrementHandler = () => {

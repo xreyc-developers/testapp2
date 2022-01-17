@@ -18,7 +18,8 @@ const Challenge1 = () => {
           {
             method: "POST",
             headers: {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
+              "Accept": "application/json"
             },
             body: JSON.stringify({ count: 0 })
           }
@@ -38,7 +39,8 @@ const Challenge1 = () => {
         {
           method: "PUT",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "Accept": "application/json"
           },
           body: JSON.stringify({
             count: counter.count 
