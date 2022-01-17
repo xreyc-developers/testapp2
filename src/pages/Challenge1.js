@@ -30,9 +30,9 @@ const Challenge1 = () => {
   // UPDATE PER COUNT CHANGES
   useEffect(() => {
     const updateData = async () => {
-      await axios.put('https://reyc-testapp3.herokuapp.com/api/counter/' + counter.id, {
-        count: counter.count
-      });
+      await axios.put('https://reyc-testapp3.herokuapp.com/api/counter/' + counter.id,
+        { count: counter.count }
+      );
     }
     if(isInitialDone) {
       updateData();
