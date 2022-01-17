@@ -40,7 +40,7 @@ const Challenge1 = () => {
           method: "PUT",
           mode: "cors",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "text/plain"
           },
           body: JSON.stringify({ count: counter.count })
         }
