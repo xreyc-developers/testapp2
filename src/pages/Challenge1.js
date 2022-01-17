@@ -49,7 +49,7 @@ const Challenge1 = () => {
         }
       );
     }
-    if(isInitial && counter.count !== null) {
+    if(!isInitial && counter.count !== null) {
       updateData();
     }
   },[counter.id, counter.count, isInitial])
