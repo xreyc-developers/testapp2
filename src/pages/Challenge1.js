@@ -7,7 +7,7 @@ const Challenge1 = () => {
   useEffect(() => {
     const prepareData = async () => {
       // GET DATA
-      const getData = await fetch("https://reyc-testapp3.herokuapp.com/api/counter", { mode: "cors" });
+      const getData = await fetch("https://reyc-testapp3.herokuapp.com/api/counter", { mode: "not-cors" });
       const gdata = await getData.json();
       if(gdata.length !== 0) {
         setCounter({ id: gdata[0]._id, count: gdata[0].count });
@@ -17,7 +17,7 @@ const Challenge1 = () => {
         const postData = await fetch("https://reyc-testapp3.herokuapp.com/api/counter", 
           {
             method: "POST",
-            mode: "cors",
+            mode: "no-cors",
             headers: {
               "Content-Type": "application/json"
             },
@@ -38,7 +38,7 @@ const Challenge1 = () => {
       await fetch("https://reyc-testapp3.herokuapp.com/api/counter/" + counter.id, 
         {
           method: "PUT",
-          mode: "cors",
+          mode: "no-cors",
           headers: {
             "Content-Type": "text/plain"
           },
