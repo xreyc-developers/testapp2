@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 const Challenge1 = () => {
   const [counter, setCounter] = useState({ id: null, count: 0 });
+  const [isInitial, setIsInitial] = useState(true);
 
   // INITIALIZE
   useEffect(() => {
@@ -48,10 +49,10 @@ const Challenge1 = () => {
         }
       );
     }
-    if(counter.id != null) {
+    if(isInitial) {
       updateData();
     }
-  },[counter.id, counter.count])
+  },[counter.id, counter.count, isInitial])
 
   // INCREMENT
   const incrementHandler = () => {
@@ -59,6 +60,7 @@ const Challenge1 = () => {
       const newCount = prevState.count++;
       return { id: prevState.id, count: newCount }
     });
+    setIsInitial(false);
   }
 
   // DECREMENT
@@ -67,6 +69,7 @@ const Challenge1 = () => {
       const newCount = prevState.count--;
       return { id: prevState.id, count: newCount }
     });
+    setIsInitial(false);
   }
 
   return (
