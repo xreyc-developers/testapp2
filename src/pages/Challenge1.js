@@ -7,14 +7,14 @@ const Challenge1 = () => {
   useEffect(() => {
     const prepareData = async () => {
       // GET DATA
-      const getData = await fetch("https://reyc-testapp3.herokuapp.com/api/counter");
+      const getData = await fetch("https://reyc-testapp4.herokuapp.com/api/counter");
       const gdata = await getData.json();
       if(gdata.length !== 0) {
         setCounter({ id: gdata[0]._id, count: gdata[0].count });
       }
       else {
         // POST DATA
-        const postData = await fetch("https://reyc-testapp3.herokuapp.com/api/counter", 
+        const postData = await fetch("https://reyc-testapp4.herokuapp.com/api/counter", 
           {
             method: "POST",
             headers: {
@@ -34,20 +34,21 @@ const Challenge1 = () => {
   // UPDATE PER COUNT CHANGES
   useEffect(() => {
     const updateData = async () => {
-      await fetch("https://reyc-testapp3.herokuapp.com/api/counter", 
+      await fetch("https://reyc-testapp4.herokuapp.com/api/counter/" + counter.id, 
         {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "text/plain"
           },
-          body: JSON.stringify({ 
-            id: counter.id,
+          body: JSON.stringify({
             count: counter.count 
           })
         }
       );
     }
-    updateData();
+    if(counter.id !== null) {
+      updateData();
+    }
   },[counter.id, counter.count])
 
   // INCREMENT
