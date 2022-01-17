@@ -4,13 +4,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBVKwxwRNLkhUkfaz85JhRCep6sFa_4n_g",
-    authDomain: "challenge2-450f9.firebaseapp.com",
-    projectId: "challenge2-450f9",
-    storageBucket: "challenge2-450f9.appspot.com",
-    messagingSenderId: "143914751792",
-    appId: "1:143914751792:web:e9d3eee199554de16e5af5",
-    measurementId: "G-ZV9MQYW7V3"
+    apiKey: "AIzaSyBQcfJleXUHruG0nyB-kL1AYtGKDD1aORc",
+    authDomain: "challenge2-new.firebaseapp.com",
+    projectId: "challenge2-new",
+    storageBucket: "challenge2-new.appspot.com",
+    messagingSenderId: "312413054019",
+    appId: "1:312413054019:web:6354f100a7ed7de3e320f6",
+    measurementId: "G-L6MCNZ50F6"
 };
 const app = initializeApp(firebaseConfig);
 
