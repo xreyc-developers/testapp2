@@ -56,20 +56,20 @@ const Challenge1 = () => {
 
   // INCREMENT
   const incrementHandler = () => {
+    setIsInitial(false);
     setCounter(prevState => {
       const newCount = prevState.count++;
       return { id: prevState.id, count: newCount }
     });
-    setIsInitial(false);
   }
 
   // DECREMENT
   const decrementHandler = () => {
+    setIsInitial(false);
     setCounter(prevState => {
       const newCount = prevState.count--;
       return { id: prevState.id, count: newCount }
     });
-    setIsInitial(false);
   }
 
   return (
